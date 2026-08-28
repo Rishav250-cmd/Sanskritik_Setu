@@ -1,5 +1,5 @@
 import './App.css'
- import ThreeBackground from './pages/background'
+import ThreeBackground from './pages/background'
 import Navbar from './pages/navbar.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home.jsx'
