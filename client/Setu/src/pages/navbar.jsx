@@ -13,13 +13,10 @@ const navLinks = [
 ]
 
 function Navbar() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
-    <div>
-      <Link to="/">HOME</Link>
-      <Link to="/community">COMMUNITY</Link>
-      <Link to="/Heritage">HERITAGE SITES</Link>
+   
 
     <div className="text-white fixed top-4 left-1/2 z-50 flex w-[calc(100%-24px)] sm:w-[calc(100%-48px)] max-w-[1900px] -translate-x-1/2 items-center justify-between">
       {/* <img src={logo} alt="logo" /> */}
@@ -77,7 +74,7 @@ function Navbar() {
         </nav>
       )}
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
