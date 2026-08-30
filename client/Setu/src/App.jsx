@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Home from './pages/Home.jsx'
 import Community from './pages/Community.jsx'
-
+import HeritageSites from './HeritageSites.jsx'
 function App() {
   return (
     <BrowserRouter>
@@ -17,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/community" element={<Community />} />
+        <Route path="/heritage" element={<HeritageSites/>}/>
       </Routes>
 
     </BrowserRouter>
