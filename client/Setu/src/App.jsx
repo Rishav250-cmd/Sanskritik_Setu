@@ -1,13 +1,16 @@
 import './App.css'
-
- import ThreeBackground from './pages/background'
+import ThreeBackground from './pages/background'
 import Navbar from './pages/navbar.jsx'
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
 import Home from './pages/Home.jsx'
 import Community from './pages/Community.jsx'
 import HeritageSites from './HeritageSites.jsx'
+import Art from './pages/Art.jsx'
+import History from './pages/History.jsx'
+import Culture from './pages/Culture.jsx'
+import Heritage from './pages/Heritage.jsx'
+import Sign from './pages/Signin.jsx'
+
 function App() {
   return (
     <BrowserRouter>
@@ -17,10 +20,18 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/community" element={<Community />} />
+<<<<<<< HEAD
         <Route path="/heritage" element={<HeritageSites/>}/>
+=======
+        <Route path="/art" element={<Art/>} />
+        <Route path="/history" element={<History />} />
+        <Route path="/culture" element={<Culture />} />
+        <Route path="/heritage" element={<Heritage />} />
+        <Route path="/Signin" element={<Sign />} />
+>>>>>>> a4c5c6a1d958d2b9680a2423713517358ba435a1
       </Routes>
-
     </BrowserRouter>
+    
   )
 }
 
