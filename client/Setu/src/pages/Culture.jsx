@@ -211,6 +211,7 @@ const cultureData = {
     food: 'Rajasthani cuisine developed around the desert environment and is rich in flavour. Dal baati churma, gatte ki sabzi, ker sangri and ghevar are famous specialities. Hindi and various Rajasthani dialects are spoken, while colourful turbans, odhnis and traditional jewellery complete the cultural picture.',
     festivals: 'Rajasthan’s fairs and festivals feel like living spectacles of colour and tradition. The Pushkar Fair brings together traders, performers and visitors, while the Desert Festival showcases folk music, dance and crafts. Gangaur and Teej add processions, rituals and celebrations to the festive calendar.'
   },
+  // adding comment 
   'Sikkim': {
     customs: 'Sikkim’s cultural identity brings together Lepcha, Bhutia and Nepali traditions. Buddhist monasteries, traditional weaving, folk music and colourful rituals reflect the state’s peaceful mountain heritage. Ancient customs continue alongside vibrant community celebrations and distinctive local craftsmanship.',
     food: 'Sikkim’s cuisine reflects its Himalayan setting and cultural diversity. Momos, thukpa, gundruk and fermented foods are popular choices. Nepali is widely spoken alongside Sikkimese languages and English, while traditional woollen clothing and handwoven textiles add warmth and character.',
