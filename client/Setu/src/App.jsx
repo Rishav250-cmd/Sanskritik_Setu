@@ -5,6 +5,7 @@ import Footer from './pages/Footer.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import Community from './pages/Community.jsx'
+
 import Art from './pages/Art.jsx'
 import History from './pages/History.jsx'
 import Culture from './pages/Culture.jsx'
