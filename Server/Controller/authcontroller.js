@@ -1,23 +1,27 @@
-const { registerSchema } = require('../utils/validation');
-const usermodel = require('../models/usermodel');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const {generatetoken} = require('../utils/generatetoken');
+import { registerSchema } from '../utils/validation.js';
+import usermodel from '../models/usermodel.js';
+import bcrypt from 'bcrypt';
+import { generatetoken } from '../utils/generatetoken.js';
 
-module.exports.registerUser = async function (req, res) {
+const COOKIE_OPTIONS = {
+  httpOnly: true,
+  secure: process.env.NODE_ENV === 'production', // HTTPS only in prod
+  sameSite: 'lax', // same-origin, so 'lax' is fine — no need for 'none'
+  maxAge: 7 * 24 * 60 * 60 * 1000,
+};
+
+export const registerUser =  async function (req, res) {
   try {
     let { name, email, password, phone, nationality } = req.body;
 
     const { error } = registerSchema.validate(req.body);
     if (error) {
-      req.flash('error', error.message);
-      return res.redirect('/');
+      return res.status(400).json({ message: error.message });
     }
 
     let existingUser = await usermodel.findOne({ email: email });
     if (existingUser) {
-      req.flash('error', 'User already exists, Please Login');
-      return res.redirect('/');
+      return res.status(409).json({ message: 'User already exists, please login' });
     }
 
     const salt = await bcrypt.genSalt(10);
@@ -28,48 +32,49 @@ module.exports.registerUser = async function (req, res) {
       password: hash,
       email,
       phone,
-      nationality
+      nationality,
     });
 
     const token = generatetoken(createduser);
-    res.cookie('token', token, { httpOnly: true });
-    req.flash('success', 'User registered successfully, please login');
-    return res.redirect('/');
+    res.cookie('token', token, COOKIE_OPTIONS);
 
+    return res.status(201).json({
+      message: 'User registered successfully',
+      user: { id: createduser._id, name: createduser.name, email: createduser.email },
+    });
   } catch (err) {
     console.log(err.message);
-    return res.status(500).send('Internal Server Error');
+    return res.status(500).json({ message: 'Internal Server Error' });
   }
 };
 
-module.exports.loginUser = async function (req, res) {
+export const loginUser =  async function (req, res) {
   try {
     let { email, password } = req.body;
     let user = await usermodel.findOne({ email: email });
 
     if (!user) {
-      req.flash('error', 'Invalid email or password');
-      return res.redirect('/');
+      return res.status(401).json({ message: 'Invalid email or password' });
     }
 
     bcrypt.compare(password, user.password, function (err, result) {
       if (err) {
-        req.flash('error', 'Something went wrong, try again');
-        return res.redirect('/');
+        return res.status(500).json({ message: 'Something went wrong, try again' });
       }
 
       if (result) {
         let token = generatetoken(user);
-        res.cookie('token', token, { httpOnly: true });
-        return res.redirect('/shop');
+        res.cookie('token', token, COOKIE_OPTIONS);
+        return res.status(200).json({
+          message: 'Logged in successfully',
+          user: { id: user._id, name: user.name, email: user.email },
+        });
       } else {
-        req.flash('error', 'Invalid email or password');
-        return res.redirect('/');
+        return res.status(401).json({ message: 'Invalid email or password' });
       }
     });
-
   } catch (err) {
     console.log(err.message);
-    return res.status(500).send('Internal Server Error');
+    return res.status(500).json({ message: 'Internal Server Error' });
   }
 };
