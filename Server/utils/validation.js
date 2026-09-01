@@ -1,5 +1,5 @@
-const Joi = require('joi');
- 
+import Joi from 'joi';
+
 // Mirrors the required fields in models/usermodel.js
 export const registerSchema = Joi.object({
   name: Joi.string().trim().min(2).max(50).required(),
@@ -8,5 +8,3 @@ export const registerSchema = Joi.object({
   phone: Joi.string().trim().min(6).required(),
   nationality: Joi.string().trim().required(),
 });
- 
-

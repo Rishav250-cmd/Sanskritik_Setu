@@ -14,9 +14,9 @@ import Sign from './pages/Signin.jsx'
 function App() {
   return (
     <BrowserRouter>
-    <ThreeBackground />
+    
       <Navbar />
-
+    <ThreeBackground />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/community" element={<Community />} />

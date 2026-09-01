@@ -18,4 +18,5 @@ userSchema.set("toJSON", {
     },
 });
 
-export default user = model("user", userSchema);
+const user = model("user", userSchema);
+export default user;
