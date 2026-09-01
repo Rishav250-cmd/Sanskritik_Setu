@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import Agent from "./agent.jsx"
 // Demo Data
 const heritageData = [
   {
@@ -320,6 +320,9 @@ export default function HeritageSites() {
           </div>
         </div>
       )}
+      <div className="w-full md:w-80 md:ml-6 mt-6 md:mt-0">
+  <Agent />
+  </div>
     </div>
     );
   }
