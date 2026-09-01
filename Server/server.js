@@ -1,7 +1,18 @@
+
 // backend/server.js (add to your existing file)
 require("dotenv").config();
 const Anthropic = require("@anthropic-ai/sdk");
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+
+import 'dotenv/config';
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import cookieParser from 'cookie-parser';
+import usersRouter from './Routes/userRouter.js';
+import connectDB from './Config/db.js';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.post("/api/ask", async (req, res) => {
   const { question } = req.body;
