@@ -5,7 +5,7 @@ import { FaGithub, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa'
 const linkGroups = [
     {
         title: 'Product',
-        links: ['Features', 'Pricing', 'Changelog', 'Roadmap'],
+        links: ['Culture', 'Tradition', 'Religion', 'Roadmap'],
     },
     {
         title: 'Company',
@@ -13,7 +13,7 @@ const linkGroups = [
     },
     {
         title: 'Resources',
-        links: ['Docs', 'Guides', 'Support', 'API Status'],
+        links: ['Docs', 'Guides', 'Support'],
     },
 ]
 

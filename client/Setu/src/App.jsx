@@ -1,7 +1,6 @@
 import './App.css'
 import ThreeBackground from './pages/background'
 import Navbar from './pages/navbar.jsx'
-import Footer from './pages/Footer.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import Community from './pages/Community.jsx'
@@ -27,7 +26,6 @@ function App() {
         <Route path="/heritage" element={<Heritage />} />
         <Route path="/Signin" element={<Sign />} />
       </Routes>
-      <Footer />
     </BrowserRouter>
     
   )
