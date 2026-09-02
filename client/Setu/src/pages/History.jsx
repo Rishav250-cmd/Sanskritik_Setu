@@ -130,8 +130,8 @@ const eras = [
 
 function History() {
   return (
-    <main className="min-h-screen px-4 pb-16 pt-8 text-white sm:px-6 lg:px-10">
-      <section className="mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-white/15 bg-black/35 shadow-[0_20px_60px_rgba(0,0,0,0.45)] backdrop-blur-md">
+    <main className="min-h-screen px-4 pb-16 pt-20 text-white sm:px-6 lg:px-10">
+      <section className="mx-auto max-w-6xl pt-8 overflow-hidden rounded-[2rem] border border-white/15 bg-black/35 shadow-[0_20px_60px_rgba(0,0,0,0.45)] backdrop-blur-md">
         <div className="sticky top-0 z-30 border-b border-white/10 bg-black/70 px-3 py-3 backdrop-blur-md sm:px-6">
           <nav aria-label="History eras" className="grid grid-cols-2 gap-2 md:grid-cols-4">
             {eraLinks.map(({ id, label }) => (
