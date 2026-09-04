@@ -10,7 +10,7 @@ India's cultural diversity — its monuments, art forms, festivals, and traditio
 
 ## ✨ Features
 
-- 🏛️ **Heritage Sites** — Explore India's monuments and historical landmarks
+- 🏛️ **Heritage Site** — Explore India's monuments and historical landmarks
 - 🎨 **Art** — Discover traditional and regional Indian art forms
 - 📜 **History** — Learn the stories behind India's cultural evolution
 - 🌏 **Culture** — Dive into festivals, traditions, and regional practices
